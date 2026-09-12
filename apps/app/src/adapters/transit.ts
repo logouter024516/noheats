@@ -49,7 +49,7 @@ export async function fetchTransitRoutes(
   let res: Response;
   try {
     res = await fetch(PROXY_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         originLat: origin.coordinate.latitude,
