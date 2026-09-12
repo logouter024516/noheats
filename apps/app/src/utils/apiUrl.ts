@@ -11,12 +11,12 @@
 export function apiBase(): string {
   const explicit = process.env.EXPO_PUBLIC_API_BASE;
   if (explicit) return explicit.replace(/\/+$/, '');
-  if (typeof window === 'undefined' || !window.location) return 'http://localhost:3001/api';
+  if (typeof window === 'undefined' || !window.location) return 'http://localhost:3001/';
   const { protocol, hostname } = window.location;
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return `${protocol}//${hostname}:3001/api`;
+    return `${protocol}//${hostname}:3001/`;
   }
-  return `${protocol}//${hostname}/api`;
+  return `${protocol}//${hostname}/`;
 }
 
 /** Proxy endpoint URL for a path like '/api/transit'. */
