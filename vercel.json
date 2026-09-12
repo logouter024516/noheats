@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "cd apps/app && npm install",
+  "buildCommand": "cd apps/app && npx expo export --platform web",
+  "outputDirectory": "apps/app/dist",
+  "rewrites": [
+    { "source": "/health", "destination": "/api/proxy" },
+    { "source": "/api/:path*", "destination": "/api/proxy" }
+  ],
+  "functions": {
+    "api/proxy.mjs": { "maxDuration": 30 }
+  }
+}
