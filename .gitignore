@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# builds / tooling cache
+dist/
+web-build/
+.expo/
+.vercel/
+
+# environment / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# local-only folders (not part of the public prototype)
+landing/
+.agents/
+.hallmark/
+
+# logs
+*.log
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# typescript
+*.tsbuildinfo
